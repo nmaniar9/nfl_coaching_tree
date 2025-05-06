@@ -247,6 +247,27 @@
             this.setupPortfolioLinks();
         }
         
+        loadStaticData() {
+            // Parse the static CSV data
+            this.coachingData = this.parseCSV(staticCsvData);
+            if (this.coachingData.length === 0) {
+                this.showAlert('No valid data found in static CSV');
+                return;
+            }
+            
+            // Process coaching data
+            this.processCoachingData();
+            
+            // Calculate positions
+            this.calculatePositions();
+            
+            // Render the visualization
+            this.renderVisualization();
+            
+            // Also update the textarea to show the data
+            document.getElementById('data-input').value = staticCsvData;
+        }
+        
         /**
          * Set up portfolio and GitHub links
          */
