@@ -2307,20 +2307,6 @@
             this.setupPortfolioLinks();
         }
         
-        loadStaticData() {
-            // Parse the static CSV data
-            this.coachingData = this.parseCSV(staticCsvData);
-            if (this.coachingData.length === 0) {
-                this.showAlert('No valid data found in static CSV');
-                return;
-            }
-
-        /**
-         * Load sample data into the visualization (for backward compatibility)
-         */
-        loadSampleData() {
-            this.loadStaticData();
-        }
         
             
             
