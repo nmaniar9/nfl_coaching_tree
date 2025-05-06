@@ -4,58 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFL Coaching Tree Visualization</title>
-    <style>
-        /* Add your CSS here or link to a separate CSS file */
-        /* Basic styling for the visualization */
-        #coaching-tree {
-            position: relative;
-            min-height: 600px;
-            width: 100%;
-        }
-        .coach-node {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            cursor: pointer;
-        }
-        .coach-node.head-coach {
-            background-color: #1e3a8a;
-        }
-        .coach-node.coordinator {
-            background-color: #059669;
-        }
-        .connection {
-            position: absolute;
-            height: 3px;
-            background-color: #94a3b8;
-            transform-origin: left center;
-        }
-        /* Add more styling as needed */
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>NFL Coaching Tree Visualization</h1>
+        <header>
+            <h1>NFL Coaching Tree Visualization</h1>
+            <div class="instructions">
+                <p><strong>Instructions:</strong> Upload your NFL coaching data in CSV format or paste it into the text area below. 
+                The data should include columns for Season, head_coach, coordinator, role, team, wins, losses, and ties.</p>
+                <p>Click on a coach's circle to view their career details. Click on a specific team/year to highlight related coaches.</p>
+            </div>
+        </header>
         
-        <div>
-            <textarea id="data-input" placeholder="Paste CSV data here"></textarea>
-            <div>
+        <div class="controls">
+            <textarea id="data-input" placeholder="Paste your CSV data here, including headers (Season,head_coach,coordinator,role,team,wins,losses,ties)"></textarea>
+            <div class="buttons">
                 <button id="load-data">Load Data</button>
-                <button id="load-sample">Load Sample Data</button>
                 <button id="reset-view">Reset View</button>
+                <button id="load-sample">Load Sample Data</button>
             </div>
         </div>
         
-        <div id="coaching-tree"></div>
+        <div class="coaching-tree" id="coaching-tree"></div>
+        
+        <footer>
+            <p>Created by <a href="#" id="portfolio-link">Aayush Munshi</a> | <a href="#" id="https://github.com/Yush10">GitHub Repo</a></p>
+        </footer>
     </div>
-    
-    <!-- Reference your JavaScript file -->
-    <script src="your-js-filename.js"></script>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
